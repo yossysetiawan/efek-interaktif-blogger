@@ -1,0 +1,73 @@
+# 📎 Petunjuk Pemasangan — Efek Gambar Mengikuti Cursor di Blogger
+
+Efek ini memungkinkan gambar (seperti karakter chibi atau ikon blog) mengikuti gerakan mouse pengunjung secara real-time.  
+Cocok untuk kamu yang ingin menambahkan sentuhan interaktif dan imajinatif ke tampilan blog—tanpa framework berat atau kode kompleks.
+
+---
+
+## 🧩 Yang Kamu Butuhkan
+
+- `cursor-follow.js` — skrip utama penggerak kursor
+- `cursor-style.css` — styling elemen visual
+- Gambar chibi atau ikon PNG transparan
+- Tag `<img>` dan `<script>` untuk disisipkan ke template Blogger
+
+---
+
+## 🚀 Langkah Pemasangan
+
+### 1. Siapkan Gambar
+
+Upload gambar ke layanan yang mendukung hotlink (GitHub, Blogger, atau layanan CDN).  
+Contoh link dari repo ini:
+https://raw.githubusercontent.com/yossysetiawan/efek-interaktif-blogger/main/visual/chibi-assets/YSS%20Fly%20Like%20Bird%20(no%20shadow).png
+
+---
+
+### 2. Tambahkan CSS dan Script di Blogger
+
+Masuk ke Blogger → **Tema** → **Edit HTML**, lalu sisipkan bagian berikut di dalam `<head>`:
+
+```html
+<style>
+  #chibi-cursor {
+    position: absolute;
+    width: 100px;
+    pointer-events: none;
+    transform: translate(-50%, -50%);
+    transition: transform 0.1s ease-out;
+    z-index: 999;
+  }
+</style>
+
+Lalu tambahkan ini di bagian bawah sebelum </body>:
+
+<img src="LINK-GAMBAR-KAMU" id="chibi-cursor" alt="Chibi Follow" />
+
+<script>
+  document.addEventListener("mousemove", function(e) {
+    const cursor = document.getElementById("chibi-cursor");
+    cursor.style.left = e.pageX + "px";
+    cursor.style.top = e.pageY + "px";
+  });
+</script>
+
+📌 Ganti LINK-GAMBAR-KAMU dengan URL gambar yang kamu mau.
+
+✨ Tips Tambahan
+- Pastikan template Blogger tidak memblokir position: absolute atau elemen #chibi-cursor
+- Gunakan gambar ukuran kecil (80–120px), transparan, dan ringan agar performa tetap lancar
+- Efek bisa dipasang di seluruh blog atau hanya di halaman tertentu—sesuaikan dengan narasi kamu
+
+🧶 Versi Widget Blogger-Friendly (Segera Hadir)
+Kami sedang menyusun versi ringan yang bisa dipasang langsung lewat tata letak sidebar atau footer Blogger tanpa perlu edit HTML manual.
+Stay tuned!
+
+💬 Catatan Personal
+Efek ini bukan sekadar permainan visual—ia adalah bagian dari cerita kecil yang bergerak bersama imajinasi.
+Semoga kamu bisa mengembangkan, memodifikasi, dan menemukan versi paling khas untuk blogmu sendiri.
+
+🔗 Contoh penerapan akhir bisa dilihat langsung di blog saya:
+🖼️ yossysetiawansobandi.blogspot.com
+
+---
