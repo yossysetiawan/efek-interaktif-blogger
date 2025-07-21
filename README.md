@@ -22,4 +22,6 @@ MIT License — bebas digunakan, dimodifikasi, dan dibagikan selama mencantumkan
 
 ---
 
-*Proyek ini bagian dari eksplorasi kreatif blog edukatif: memadukan teknologi, kehangatan visual, dan pengalaman digital yang lebih hidup.*
+---
+💬 Proyek ini adalah bagian dari proses belajar dan pencarian gaya visual yang lebih hidup.  
+Jika kamu kreator Blogger yang suka eksperimen interaktif atau narasi edukatif, semoga skrip ini bisa jadi pijakan atau inspirasi kecil dalam perjalanan digitalmu.
