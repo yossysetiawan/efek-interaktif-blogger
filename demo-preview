@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Demo Cursor Chibi</title>
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      background: linear-gradient(to bottom, #f0f4ff, #dbe4ff);
+      overflow: hidden;
+      position: relative;
+      font-family: 'Segoe UI', sans-serif;
+    }
+
+    #chibi-cursor {
+      position: absolute;
+      width: 100px;
+      height: auto;
+      pointer-events: none;
+      transform: translate(-50%, -50%);
+      transition: transform 0.1s ease-out;
+      z-index: 999;
+    }
+
+    #caption {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      background: rgba(255, 255, 255, 0.8);
+      padding: 12px;
+      border-radius: 8px;
+      font-size: 16px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+  </style>
+</head>
+<body>
+  <div id="caption">🖱️ Gerakkan cursor, lihat si chibi mengikuti!</div>
+  <img src="https://raw.githubusercontent.com/yossysetiawan/efek-interaktif-blogger/main/visual/chibi-assets/YSS%20Fly%20Like%20Bird%20(no%20shadow).png"
+       id="chibi-cursor"
+       alt="Chibi Cursor" />
+
+  <script>
+    document.addEventListener("mousemove", function(e) {
+      const cursor = document.getElementById("chibi-cursor");
+      cursor.style.left = e.pageX + "px";
+      cursor.style.top = e.pageY + "px";
+    });
+  </script>
+</body>
+</html>
